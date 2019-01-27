@@ -5,9 +5,8 @@ using System.Text;
 
 namespace MyPhotoshop
 {
-    public class GrayScaleFilter : PixelFilter
+    public class GrayScaleFilter : PixelFilter<EmptyParameters>
     {
-        public GrayScaleFilter() : base(new EmptyParameters()) { }
         public override string ToString()
         {
             return "Оттенки серого";

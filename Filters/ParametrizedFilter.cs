@@ -2,20 +2,18 @@ using System;
 
 namespace MyPhotoshop
 {
-	public abstract class ParametrizedFilter : IFilter
+	public abstract class ParametrizedFilter<TParameters> : IFilter
+        where TParameters : IParameters, new()
 	{
-        IParameters parameters;
-        public ParametrizedFilter(IParameters param)
-        {
-            parameters = param;
-        }
         public ParameterInfo[] GetParameters()
         {
+            var parameters = new TParameters();
             return parameters.GetDescription();
         }
 
         public Photo Process(Photo original, double[] param)
         {
+            var parameters = new TParameters();
             parameters.SetValues(param);
             return Process(original, parameters);
         }
