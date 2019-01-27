@@ -21,10 +21,10 @@ namespace MyPhotoshop
 
         public override Photo Process(Photo original, TParameters parameters)
         {
-            var result = new Photo(original.width, original.height);
-            for (int x = 0; x < result.width; x++)
+            var result = new Photo(original.Width, original.Height);
+            for (int x = 0; x < result.Width; x++)
             {
-                for (int y = 0; y < result.height; y++)
+                for (int y = 0; y < result.Height; y++)
                 {
                     result[x, y] = processor(original[x, y], parameters);
                 }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace MyPhotoshop
 {
@@ -30,11 +27,11 @@ namespace MyPhotoshop
             if (value > 1) return 1;
             return value;
         }
-        public static Pixel operator* (Pixel pixel, double val)
+        public static Pixel operator *(Pixel pixel, double val)
         {
             return new Pixel(
-                pixel.R * val, 
-                pixel.G * val, 
+                pixel.R * val,
+                pixel.G * val,
                 pixel.B * val
                 );
         }
